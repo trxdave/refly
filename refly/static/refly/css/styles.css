@@ -1,104 +1,167 @@
+/* General Styles for Cheatsheet Lists Page */
 body {
-  background-color: #000000; /* Black background */
-  color: #FFFFFF; /* White text */
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #F4F7FC, #E8EEF5); /* Softer, warm gradient */
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-  color: #00FF00; /* Neon green headings */
-}
-
-/* Links */
-a {
-  color: #FFD700; /* Bright yellow for links */
-  text-decoration: none;
-}
-
-a:hover {
-  color: #FFCC00; /* Slightly darker yellow */
-  text-decoration: underline;
-}
-
-/* Navbar Customization */
+/* Navbar */
 .navbar {
-  background: #000000; /* Black background */
-  border-bottom: 2px solid #00FF00; /* Neon green border */
-  box-shadow: 0 0 10px #00FF00;
+  background: #F8F9FA; /* Soft Off-White */
+  border-bottom: 2px solid #3B4CCA; /* Darker Blue */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
+  font-size: 22px;
   font-weight: bold;
-  color: #FFD700 !important; /* Yellow logo */
+  color: #3B4CCA !important;
 }
 
 .navbar-nav .nav-link {
-  color: #FFFFFF !important; /* White text for nav links */
-  transition: color 0.3s ease, background-color 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  transition: color 0.3s;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #FFD700 !important; /* Yellow text on hover */
+  color: #3B4CCA !important;
 }
 
-/* Active Navigation Link */
-.navbar-nav .active .nav-link {
-  color: #00FF00 !important; /* Neon green active link */
-  border-bottom: 2px solid #FFD700; /* Yellow border */
+/* Cheatsheet Section */
+.cheatsheet-section {
+  text-align: center;
+  padding: 50px 20px;
 }
 
-/* Buttons */
+.cheatsheet-section h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #3B4CCA;
+}
+
+/* Search Form */
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  background: #FFFFFF;
+  border: 1px solid #CCC;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-input:focus {
+  border-color: #3B4CCA;
+  outline: none;
+}
+
 .btn-custom {
-  background-color: #00FF00; /* Neon green button */
-  color: #000000; /* Black text */
-  border: none;
-  transition: background-color 0.3s;
-  box-shadow: 0 0 10px #00FF00;
+  background-color: #3B4CCA;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 16px;
+  transition: background 0.3s ease-in-out;
 }
 
 .btn-custom:hover {
-  background-color: #FFD700; /* Bright yellow on hover */
-  color: #000000;
+  background-color: #5271FF;
 }
 
-/* Cards & Panels */
-.card {
-  background-color: #111; /* Slightly lighter black */
-  border: 2px solid #00FF00;
-  box-shadow: 0 0 10px #00FF00;
-  color: #FFFFFF;
+/* Cheatsheet Grid */
+.cheat-card {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  background-color: #FFFFFF;
+  border: 1px solid #D1D9E6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #333;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.card-title {
-  color: #FFD700;
+.cheat-card h5 {
+  font-weight: bold;
+  color: #3B4CCA;
 }
 
-.card-text {
-  color: #FFFFFF;
+.cheat-card p {
+  color: #555;
+  font-size: 14px;
+}
+
+.cheat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Button inside Cheat Cards */
+.cheat-card .btn {
+  background-color: #5271FF;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: background 0.3s ease-in-out;
+}
+
+.cheat-card .btn:hover {
+  background-color: #3B4CCA;
+}
+
+/* Adjusting Text Contrast */
+.cheat-card h5,
+.cheat-card p {
+  opacity: 1 !important;
+}
+
+/* Making sure text and buttons are visible */
+.cheat-card {
+  filter: brightness(100%) contrast(110%);
 }
 
 /* Footer */
 footer {
-  background-color: #000000;
-  color: #FFD700;
+  background: #3B4CCA; /* Deep Royal Blue */
+  color: #FFF;
   text-align: center;
   padding: 20px;
+  margin-top: 50px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Floating Buy Me a Coffee Button */
-.floating-bmc {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
+footer a {
+  color: #FFF;
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
-.floating-bmc img {
-  width: 60px;
-  transition: transform 0.3s ease-in-out;
+footer a:hover {
+  color: #FFEB3B; /* Bright Yellow on Hover */
 }
 
-.floating-bmc img:hover {
-  transform: scale(1.1);
+/* Responsive */
+@media (max-width: 768px) {
+  .cheat-card {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .cheat-icon {
+      margin-bottom: 10px;
+  }
 }
+

@@ -1,0 +1,14 @@
+{% extends "refly/base.html" %}
+{% load static %}
+
+{% block title %}{{ cheat.title }} - Refly.io{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-neon">{{ cheat.title }}</h1>
+    <h4 class="text-yellow">{{ cheat.category }}</h4>
+    <p>{{ cheat.content }}</p>
+
+    <a href="{% url 'cheatsheet_list' %}" class="btn btn-custom">Back to Cheatsheets</a>
+</div>
+{% endblock %}

@@ -1,35 +1,34 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Refly.io{% endblock %}</title>
 
-  <!-- Bootstrap CSS CDN -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-
-  <!-- Custom CSS -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'refly/css/styles.css' %}">
 
   {% block extra_head %}{% endblock %}
 </head>
-
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="/">Refly.io</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/references/">References</a></li>
-        <li class="nav-item"><a class="nav-link" href="/cheatsheets/lists/">Cheatsheets</a></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+      <a class="navbar-brand text-primary font-weight-bold" href="/">Refly.io</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link text-dark" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/references/">References</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="/cheatsheets/lists/">Cheatsheets</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -38,30 +37,20 @@
     {% block content %}{% endblock %}
   </div>
 
-  <!-- Floating Buy Me a Coffee Button -->
-  <a href="https://www.buymeacoffee.com/refly" target="_blank" class="floating-bmc">
-    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee">
-  </a>
+  <!-- Footer -->
+  <footer class="footer bg-white text-center text-muted py-3 mt-5 shadow-sm">
+    <div class="container">
+      <p>&copy; {{ now.year }} Refly.io. All rights reserved.</p>
+      <p>
+        <a href="#" class="text-primary">Privacy Policy</a> |
+        <a href="#" class="text-primary">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
 
-  <!-- Bootstrap JS and dependencies -->
+  <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
   {% block extra_scripts %}{% endblock %}
 </body>
-
-<!-- Footer Section -->
-<footer class="footer">
-  <div class="container">
-    <p>&copy; {{ now.year }} Refly.io. All rights reserved.</p>
-    <p>
-      <a href="#" class="text-white">Privacy Policy</a> |
-      <a href="#" class="text-white">Terms of Service</a>
-    </p>
-    <p class="mt-3">
-      Support us by buying a coffee! ☕
-      <a href="https://www.buymeacoffee.com/refly" target="_blank">
-        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee">
-      </a>
-    </p>
-  </div>
-</footer>
+</html>

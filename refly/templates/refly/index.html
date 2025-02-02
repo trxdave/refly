@@ -1,10 +1,52 @@
 {% extends "refly/base.html" %}
+{% load static %}
 
-{% block title %}Home - Refly.io{% endblock %}
+{% block title %}Refly.io - Quick Tech References{% endblock %}
 
 {% block content %}
-<div class="text-center">
-  <h1 class="display-4">Welcome to Refly.io</h1>
-  <p class="lead">Your quick reference for all things awesome!</p>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Refly.io</h1>
+    <p class="hero-text">Your go-to reference hub for programming, web development, DevOps, and more 🚀</p>
 </div>
+
+<!-- Quick Links Section -->
+<div class="container quick-links">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{% url 'cheatsheet_list' %}" class="btn btn-modern">📜 View All Cheatsheets</a>
+        </div>
+        <div class="col-md-6">
+            <a href="{% url 'reference_list' %}" class="btn btn-modern">📚 Explore References</a>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Cheat Sheets -->
+<div class="container featured-section">
+    <h2>🔥 Featured Cheat Sheets</h2>
+    <div class="row">
+        {% for cheat in cheatsheets|slice:":3" %}
+            <div class="col-md-4">
+                <div class="card cheat-card">
+                    <h5>{{ cheat.title }}</h5>
+                    <p>{{ cheat.content|truncatewords:10 }}</p>
+                    <a href="{% url 'cheatsheet_detail' cheat.id %}" class="btn btn-modern">View</a>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-muted">No featured cheat sheets yet.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Support Section -->
+<div class="support-section">
+    <p>Support us by buying a coffee! ☕</p>
+    <a href="https://www.buymeacoffee.com/refly" target="_blank">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me a Coffee">
+    </a>
+</div>
+
 {% endblock %}

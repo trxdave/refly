@@ -1,0 +1,30 @@
+{% extends "refly/base.html" %}
+{% load static %}
+
+{% block title %}Submit a Cheat Sheet - Refly.io{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-neon">Submit a Cheat Sheet</h1>
+    
+    <!-- Cheat Sheet Submission Form -->
+    <form method="POST" class="cheatsheet-form">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.title.label_tag }}
+            {{ form.title }}
+        </div>
+        <div class="form-group">
+            {{ form.category.label_tag }}
+            {{ form.category }}
+        </div>
+        <div class="form-group">
+            {{ form.content.label_tag }}
+            {{ form.content }}
+        </div>
+        <button type="submit" class="btn btn-custom">Submit</button>
+    </form>
+    
+    <a href="{% url 'cheatsheet_list' %}" class="btn btn-secondary mt-3">Back to Cheatsheets</a>
+</div>
+{% endblock %}

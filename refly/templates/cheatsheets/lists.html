@@ -5,32 +5,48 @@
 
 {% block content %}
 <div class="container my-5">
-    <h1 class="text-neon">Cheatsheets</h1>
-    <input type="text" id="searchBox" class="form-control my-3" placeholder="Search cheat sheets..." onkeyup="filterCheatsheets()">
+    <h1 class="text-primary text-center">Cheatsheets</h1>
+
+    <!-- Search Bar -->
+    <form method="GET" class="search-form my-4">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control search-input" placeholder="Search cheat sheets..." value="{{ query }}">
+            <button type="submit" class="btn btn-custom">🔍 Search</button>
+        </div>
+    </form>
+
+    <!-- Submit Cheat Sheet Button -->
+    <div class="text-center mb-4">
+        <a href="{% url 'submit_cheatsheet' %}" class="btn btn-primary">➕ Submit a Cheat Sheet</a>
+    </div>
 
     <div class="row">
-        {% for category in categories %}
-            <h2 class="text-yellow">{{ category }}</h2>
-            <ul class="list-unstyled">
-                {% for cheat in cheatsheets %}
-                    {% if cheat.category == category %}
-                        <li class="cheatsheet-item"><strong>{{ cheat.title }}</strong>: {{ cheat.content }}</li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+        {% for cheat in cheatsheets %}
+            <div class="col-md-4 col-sm-6">
+                <div class="cheat-card" data-category="{{ cheat.category|lower }}">
+                    <div class="cheat-icon">
+                        {% if cheat.category == "Programming" %}
+                            <i class="fa-solid fa-code icon-green"></i>
+                        {% elif cheat.category == "Frameworks" %}
+                            <i class="fa-solid fa-cubes icon-blue"></i>
+                        {% elif cheat.category == "DevOps" %}
+                            <i class="fa-solid fa-server icon-orange"></i>
+                        {% elif cheat.category == "Cybersecurity" %}
+                            <i class="fa-solid fa-user-secret icon-red"></i>
+                        {% else %}
+                            <i class="fa-solid fa-book icon-default"></i>
+                        {% endif %}
+                    </div>
+                    <div class="cheat-details">
+                        <h5 class="cheat-title">{{ cheat.title }}</h5>
+                        <p class="cheat-text">{{ cheat.content|truncatewords:15 }}</p>
+                        <a href="{% url 'cheatsheet_detail' cheat.id %}" class="btn btn-outline-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-muted text-center">No cheatsheets found.</p>
         {% endfor %}
     </div>
 </div>
-
-<script>
-    function filterCheatsheets() {
-        let input = document.getElementById('searchBox').value.toLowerCase();
-        let items = document.getElementsByClassName('cheatsheet-item');
-
-        for (let i = 0; i < items.length; i++) {
-            let text = items[i].innerText.toLowerCase();
-            items[i].style.display = text.includes(input) ? "block" : "none";
-        }
-    }
-</script>
 {% endblock %}
