@@ -1,67 +1,104 @@
 body {
-  background-color: #f0f2f5; /* Light grey background; change as desired */
-  color: #333;
+  background-color: #000000; /* Black background */
+  color: #FFFFFF; /* White text */
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+  color: #00FF00; /* Neon green headings */
 }
 
 /* Links */
 a {
-  color: #3498db;  /* Primary blue */
+  color: #FFD700; /* Bright yellow for links */
   text-decoration: none;
 }
+
 a:hover {
-  color: #2980b9;
+  color: #FFCC00; /* Slightly darker yellow */
   text-decoration: underline;
 }
 
-/* Enhanced Navbar Customization */
+/* Navbar Customization */
 .navbar {
-  background: linear-gradient(90deg, #2c3e50, #3498db); /* Gradient background */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);              /* Subtle drop shadow */
-  border-bottom: none;                                   /* Remove default border */
+  background: #000000; /* Black background */
+  border-bottom: 2px solid #00FF00; /* Neon green border */
+  box-shadow: 0 0 10px #00FF00;
 }
 
 .navbar-brand {
   font-weight: bold;
-  color: #ecf0f1 !important; /* Light color for the brand */
-  transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-  color: #f1c40f !important; /* Change to a golden hue on hover */
+  color: #FFD700 !important; /* Yellow logo */
 }
 
 .navbar-nav .nav-link {
-  color: #ecf0f1 !important; /* Light color for nav links */
-  padding: 0.8rem 1rem;
+  color: #FFFFFF !important; /* White text for nav links */
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #f1c40f !important;                      /* Golden color on hover */
-  background-color: rgba(255, 255, 255, 0.1);       /* Light tint on hover */
-  border-radius: 4px;
+  color: #FFD700 !important; /* Yellow text on hover */
 }
 
+/* Active Navigation Link */
 .navbar-nav .active .nav-link {
-  border-bottom: 2px solid #f1c40f;  /* Active link indicator */
-  color: #f1c40f !important;
+  color: #00FF00 !important; /* Neon green active link */
+  border-bottom: 2px solid #FFD700; /* Yellow border */
 }
 
-/* Example: A button style */
+/* Buttons */
 .btn-custom {
-  background-color: #3498db;
-  color: #fff;
+  background-color: #00FF00; /* Neon green button */
+  color: #000000; /* Black text */
   border: none;
   transition: background-color 0.3s;
+  box-shadow: 0 0 10px #00FF00;
 }
 
 .btn-custom:hover {
-  background-color: #2980b9;
-  color: #fff;
+  background-color: #FFD700; /* Bright yellow on hover */
+  color: #000000;
+}
+
+/* Cards & Panels */
+.card {
+  background-color: #111; /* Slightly lighter black */
+  border: 2px solid #00FF00;
+  box-shadow: 0 0 10px #00FF00;
+  color: #FFFFFF;
+}
+
+.card-title {
+  color: #FFD700;
+}
+
+.card-text {
+  color: #FFFFFF;
+}
+
+/* Footer */
+footer {
+  background-color: #000000;
+  color: #FFD700;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Floating Buy Me a Coffee Button */
+.floating-bmc {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.floating-bmc img {
+  width: 60px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.floating-bmc img:hover {
+  transform: scale(1.1);
 }

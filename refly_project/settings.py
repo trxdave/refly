@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['8000-trxdave-refly-csqzygy4gqe.ws-eu117.gitpod.io']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://.gitpod.oi',
+    'https://8000-trxdave-refly-csqzygy4gqe.ws-eu117.gitpod.io',
+]
 
 # Application definition
 

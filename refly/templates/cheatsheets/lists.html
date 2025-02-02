@@ -1,0 +1,36 @@
+{% extends "refly/base.html" %}
+{% load static %}
+
+{% block title %}Cheatsheets - Refly.io{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-neon">Cheatsheets</h1>
+    <input type="text" id="searchBox" class="form-control my-3" placeholder="Search cheat sheets..." onkeyup="filterCheatsheets()">
+
+    <div class="row">
+        {% for category in categories %}
+            <h2 class="text-yellow">{{ category }}</h2>
+            <ul class="list-unstyled">
+                {% for cheat in cheatsheets %}
+                    {% if cheat.category == category %}
+                        <li class="cheatsheet-item"><strong>{{ cheat.title }}</strong>: {{ cheat.content }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    function filterCheatsheets() {
+        let input = document.getElementById('searchBox').value.toLowerCase();
+        let items = document.getElementsByClassName('cheatsheet-item');
+
+        for (let i = 0; i < items.length; i++) {
+            let text = items[i].innerText.toLowerCase();
+            items[i].style.display = text.includes(input) ? "block" : "none";
+        }
+    }
+</script>
+{% endblock %}
