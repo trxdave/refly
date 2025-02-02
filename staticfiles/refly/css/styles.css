@@ -1,0 +1,58 @@
+/* Base font and background */
+body {
+  background-color: #f0f2f5; /* Light grey background; change as desired */
+  color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* Links */
+a {
+  color: #3498db;  /* Primary blue */
+  text-decoration: none;
+}
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Navbar customization */
+.navbar {
+  background-color: #2c3e50;      /* Dark blue-gray background */
+  border-bottom: 2px solid #3498db; /* Accent border color */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #ecf0f1 !important;       /* Light color for the brand */
+}
+
+.navbar-nav .nav-link {
+  color: #ecf0f1 !important;       /* Light color for nav links */
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #3498db !important;       /* Accent color on hover */
+}
+
+.navbar-nav .active .nav-link {
+  color: #e74c3c !important;       /* Active link color */
+}
+
+/* Example: A button style */
+.btn-custom {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #2980b9;
+  color: #fff;
+}

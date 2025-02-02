@@ -1,0 +1,25 @@
+{% extends "refly/base.html" %}
+{% load static %}
+
+{% block title %}References - Refly.io{% endblock %}
+
+{% block content %}
+  <h2 class="my-4">Reference Cards</h2>
+  <div class="row">
+    {% for ref in references %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">{{ ref.title }}</h5>
+            <p class="card-text">{{ ref.description }}</p>
+            {% if ref.link %}
+              <a href="{{ ref.link }}" class="btn btn-custom" target="_blank">Learn More</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p>No references available.</p>
+    {% endfor %}
+  </div>
+{% endblock %}

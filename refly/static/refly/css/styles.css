@@ -1,0 +1,67 @@
+body {
+  background-color: #f0f2f5; /* Light grey background; change as desired */
+  color: #333;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* Links */
+a {
+  color: #3498db;  /* Primary blue */
+  text-decoration: none;
+}
+a:hover {
+  color: #2980b9;
+  text-decoration: underline;
+}
+
+/* Enhanced Navbar Customization */
+.navbar {
+  background: linear-gradient(90deg, #2c3e50, #3498db); /* Gradient background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);              /* Subtle drop shadow */
+  border-bottom: none;                                   /* Remove default border */
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: #ecf0f1 !important; /* Light color for the brand */
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #f1c40f !important; /* Change to a golden hue on hover */
+}
+
+.navbar-nav .nav-link {
+  color: #ecf0f1 !important; /* Light color for nav links */
+  padding: 0.8rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f1c40f !important;                      /* Golden color on hover */
+  background-color: rgba(255, 255, 255, 0.1);       /* Light tint on hover */
+  border-radius: 4px;
+}
+
+.navbar-nav .active .nav-link {
+  border-bottom: 2px solid #f1c40f;  /* Active link indicator */
+  color: #f1c40f !important;
+}
+
+/* Example: A button style */
+.btn-custom {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #2980b9;
+  color: #fff;
+}
